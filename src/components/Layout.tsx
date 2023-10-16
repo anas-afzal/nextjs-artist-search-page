@@ -16,7 +16,7 @@ export const Layout: FC<IProps> = ({ children }) => {
           <h1 className='text-4xl uppercase font-bold tracking-widest'>Artist Explorer</h1>
         </Link>
       </header>
-      <main className='w-full max-w-7xl flex flex-col mx-auto items-center px-12 pt-8'>
+      <main className='w-full max-w-7xl flex flex-col mx-auto items-center px-3 sm:px-12 pt-8'>
         {children}
       </main>
       <footer className='flex mt-auto justify-center pt-8 pb-4'>
