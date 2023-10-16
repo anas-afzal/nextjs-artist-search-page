@@ -6,6 +6,7 @@ import ImageNotFound from '../../../public/images/image-not-found.jpg';
 import HeartIcon from '../../../public/icons/heart-icon.png';
 import MoreIcon from '../../../public/icons/more-icon.png';
 import { AlbumCard } from '@/components';
+import Head from 'next/head';
 
 type ServerSideData = {
   data: Artist;
@@ -40,6 +41,9 @@ export const getServerSideProps: GetServerSideProps<ServerSideData> = async ({ p
 const Artist = ({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <>
+      <Head>
+        <title>{data.name}</title>
+      </Head>
       <div className='flex w-full bg-zinc-800 px-4 py-3 space-x-8 rounded-xl'>
         <div className='my-auto relative aspect-square w-32 h-32 sm:h-auto sm:w-1/3'>
           <Image

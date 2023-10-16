@@ -4,6 +4,7 @@ import { TypeOf, object, string } from 'zod';
 import { useLazyQuery } from '@apollo/client';
 import { GetArtistsByNameContaining } from '@/graphql/queries';
 import { ArtistCard } from '@/components';
+import Head from 'next/head';
 
 const searchArtistFormSchema = object({
   artistName: string({ required_error: 'artist name is required' }).min(
@@ -30,6 +31,9 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Home</title>
+      </Head>
       <form onSubmit={handleSubmit(searchArtist)} className='flex justify-center w-full space-x-4'>
         <div className='w-full max-w-lg'>
           <input
